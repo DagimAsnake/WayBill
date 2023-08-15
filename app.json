@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "testone",
-    "slug": "testone",
+    "name": "WayBill",
+    "slug": "WayBill",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,8 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     }
   }
 }
