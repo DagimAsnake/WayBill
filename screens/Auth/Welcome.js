@@ -1,20 +1,24 @@
 import { View, Text, StyleSheet, Image} from "react-native"
 import {LinearGradient } from "expo-linear-gradient"
 
-import Button from "../components/UI/Button"
+import Button from "../../components/UI/Button"
 
-function Welcome()  {
+function Welcome({navigation})  {
 
     function signUpHandler(){
-        console.log("sign up")
+       navigation.navigate("SignUp")
+    }
+
+    function signInHandler() {
+        navigation.navigate("SignIn")
     }
 
     return (
         <LinearGradient colors={['#5121b3', '#b61c76']} style={styles.root}>
-            <Image source={ require("../assets/Red-truck.png") } style={styles.image} />
+            <Image source={ require("../../assets/Red-truck.png") } style={styles.image} />
             <View>
                 <Text style={styles.text}>WELCOME BACK!</Text>
-                <Button style={styles.signIn} onPress={signUpHandler}>SIGN IN</Button>
+                <Button style={styles.signIn} onPress={signInHandler}>SIGN IN</Button>
                 <Button style={styles.signUp} onPress={signUpHandler}>SIGN UP</Button>
             </View>
         </LinearGradient>
