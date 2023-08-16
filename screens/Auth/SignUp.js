@@ -7,7 +7,7 @@ import IconAuth from "../../components/UI/IconAuth"
 import Input from "../../components/Auth/Input"
 import SelectInput from "../../components/Auth/SelectInput"
 import Button from "../../components/UI/Button"
-import PhoneInput from "../../components/Auth/PhoneInput"
+import PhoneNumber from "../../components/Auth/PhoneNumber"
 
 function SignUp() {
     const [name, setName] = useState('')
@@ -52,13 +52,14 @@ function SignUp() {
                     keyboardType="default"
                     placeholder="Full Name"
                 />
-                 <Input 
+                 {/* <Input 
                     label="Phone Number"
                     onUpdateValue={updateInputValueHandler.bind(this, "phone")}
                     value={phone}
                     keyboardType="phone-pad"
                     placeholder="Phone"
-                />
+                /> */}
+                <PhoneNumber />
                 <Input 
                     label="Password"
                     onUpdateValue={updateInputValueHandler.bind(this, "password")}
