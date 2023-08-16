@@ -34,6 +34,7 @@ export default SelectInput;
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 20,
     marginVertical: 5,
   },
   label: {
