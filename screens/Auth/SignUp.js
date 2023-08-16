@@ -50,27 +50,29 @@ function SignUp({navigation}) {
                     <IconAuth>SIGN UP</IconAuth>
                 </LinearGradient>
                 <ScrollView contentContainerStyle={styles.scrollViewContent}>
-                <View style={styles.view}>
-                    <SelectInput options={options} handleOptionChange={updateInputValueHandler.bind(this, "select")} />
-                    <Input 
-                        label="Name"
-                        onUpdateValue={updateInputValueHandler.bind(this, "name")}
-                        value={name}
-                        keyboardType="default"
-                        placeholder="Full Name"
-                    />
-                    <PhoneNumber phone={phone} onUpdateValue={updateInputValueHandler.bind(this, "phone")} />
-                    <PasswordInput 
-                        label="Password"
-                        onUpdateValue={updateInputValueHandler.bind(this, "password")}
-                        value={password}
-                        keyboardType="default"
-                        placeholder="Password"
-                        secure
-                    />
-                    <Button style={styles.signUp} onPress={submitHandler}>SIGN UP</Button>
+                    <View style={styles.view}>
+                        <SelectInput options={options} handleOptionChange={updateInputValueHandler.bind(this, "select")} />
+                        <Input 
+                            label="Name"
+                            onUpdateValue={updateInputValueHandler.bind(this, "name")}
+                            value={name}
+                            keyboardType="default"
+                            placeholder="Full Name"
+                        />
+                        <PhoneNumber phone={phone} onUpdateValue={updateInputValueHandler.bind(this, "phone")} />
+                        <PasswordInput 
+                            label="Password"
+                            onUpdateValue={updateInputValueHandler.bind(this, "password")}
+                            value={password}
+                            keyboardType="default"
+                            placeholder="Password"
+                            secure
+                        />
+                        <Button style={styles.signUp} onPress={submitHandler}>SIGN UP</Button>
+                    </View>
+                    <View style={styles.lastView}>
+                    <LinkScreen onPress={pressHandler}><Text style={{color: "black"}}>Have an account? </Text>SIGN IN</LinkScreen>
                 </View>
-                <LinkScreen onPress={pressHandler}><Text style={{color: "black"}}>Have an account? </Text>SIGN IN</LinkScreen>
                 </ScrollView>
             </View>
     )
@@ -98,4 +100,7 @@ const styles = StyleSheet.create({
         backgroundColor: "red",
         width: 350,
     },
+  lastView: {
+    marginBottom: 20
+  }
 })
