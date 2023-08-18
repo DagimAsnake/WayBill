@@ -12,7 +12,7 @@ import HomeCon from './screens/Control/HomeCon';
 import RewardCon from './screens/Control/RewardCon';
 import HistoryCon from './screens/Control/HistoryCon';
 import SettingCon from './screens/Control/SettingCon';
-
+import HeaderIcon from './components/UI/HeaderIcon';
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -33,10 +33,20 @@ function AuthStack() {
 function BottomNav() {
   return(
     <>
-    {/* <StatusBar style='dark' /> */}
-    <BottomTab.Navigator>
-      <BottomTab.Screen name='Home' component={HomeCon}  
+    <StatusBar style='dark' />
+    <BottomTab.Navigator 
+       screenOptions={({navigation}) => ({
+        tabBarActiveTintColor: "red",
+        headerRight: ({tintColor}) => (
+          <>
+              <HeaderIcon />
+          </>
+          )
+      })}
+    >
+      <BottomTab.Screen name='Controller' component={HomeCon}  
         options={{
+              tabBarLabel: 'Home',
               tabBarIcon: ({color, size}) => (
                 <Ionicons name="home-outline" size={size} color={color} />
               )
@@ -72,12 +82,11 @@ function BottomNav() {
 export default function App() {
   return (
     <NavigationContainer>
-    {/* <AuthStack />   */}
-    {/* After Authentication */}
-    <Stack.Navigator>
-      <Stack.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
-    </Stack.Navigator>
-    {/* <BottomNav /> */}
+      {/* <AuthStack />   */}
+      {/* After Authentication */}
+      <Stack.Navigator>
+        <Stack.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
+      </Stack.Navigator>
   </NavigationContainer>
   );
 }
