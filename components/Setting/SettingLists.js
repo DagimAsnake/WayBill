@@ -24,7 +24,7 @@ const iconLists = [
     {
         icon: "md-location-outline",
         text: "GPS",
-        nextIcon: "md-toggle",
+        nextIcon: "md-toggle-outline",
         id: "4"
     },
     {

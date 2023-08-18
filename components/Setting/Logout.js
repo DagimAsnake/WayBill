@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     text: {
         color: "red",
         fontSize: 24,
-        fontWeight: "bolc"
+        fontWeight: "bold"
     }
 })

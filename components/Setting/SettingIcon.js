@@ -6,12 +6,15 @@ import { useNavigation } from '@react-navigation/native';
 function SettingIcon({icon, text, nextIcon}) {
     const navigation = useNavigation();
 
-    const [isToggled, setIsToggled] = useState(false);
+    const [isGpsToggled, setIsGpsToggled] = useState(false);
+    const [isAuthToggled, setIsAuthToggled] = useState(false)
 
     const handlePress = () => {
         if (text === 'GPS') {
-            setIsToggled(!isToggled);
-        } 
+            setIsGpsToggled(!isGpsToggled);
+        } else if(text === "Two-Step Authentication") {
+            setIsAuthToggled(!isAuthToggled)
+        }
       };
 
     return(
@@ -23,7 +26,16 @@ function SettingIcon({icon, text, nextIcon}) {
                     </View>
                     <View style={styles.view}>
                         <Text style={styles.textLanguage}>{text === "Language" ? "Amharic" : ""}</Text>
-                        <Ionicons name={nextIcon} size={40} color="blue" />
+                        <Ionicons 
+                                name={
+                                        (text === "GPS" && isGpsToggled) ||
+                                        (text === "Two-Step Authentication" && isAuthToggled)
+                                            ? "md-toggle"
+                                            : nextIcon
+                                    } 
+                                    size={40} 
+                                    color="blue" 
+                        />
                     </View>
             </View>
         </Pressable>
