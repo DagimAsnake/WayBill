@@ -53,10 +53,10 @@ function VideoFrame() {
             <View style={styles.viewContainer}>
                 <Text style={styles.videos}>Videos</Text>
                 <View style={styles.viewIcon}>
-                    <Pressable onPress={scrollToFirstItem}>
+                    <Pressable onPress={scrollToFirstItem} style={({pressed}) => [styles.pressesd, styles.circle]} >
                         <Ionicons name="chevron-back-sharp" size={32} color="black" />
                     </Pressable>
-                    <Pressable onPress={scrollToLastItem}>
+                    <Pressable onPress={scrollToLastItem}  style={({pressed}) => [styles.pressesd, styles.circle]} >
                         <Ionicons name="chevron-forward-sharp" size={32} color="black" />
                     </Pressable>
                 </View>
@@ -69,6 +69,9 @@ function VideoFrame() {
 export default VideoFrame
 
 const styles = StyleSheet.create({
+    pressesd: {
+        opacity: 0.7
+    },
     root: {
         flex: 1
     },
@@ -79,10 +82,15 @@ const styles = StyleSheet.create({
     },
     viewIcon: {
         flexDirection: "row",
-        marginRight: 10
+        marginRight: 10,
     },
     videos: {
         fontSize: 24,
         fontWeight: "bold"
+    },
+    circle: {
+        borderRadius: 16,
+        backgroundColor: "#909090",
+        marginLeft: 5
     }
 })

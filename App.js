@@ -68,6 +68,7 @@ function BottomNav() {
       />
       <BottomTab.Screen name='Setting' component={SettingCon} 
          options={{
+            headerShown: false,
             tabBarIcon: ({color, size}) => (
               <Ionicons name="settings-outline" size={size} color={color} />
             )
@@ -85,7 +86,7 @@ export default function App() {
       {/* <AuthStack />   */}
       {/* After Authentication */}
       <Stack.Navigator>
-        <Stack.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
+          <Stack.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
       </Stack.Navigator>
   </NavigationContainer>
   );
