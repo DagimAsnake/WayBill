@@ -18,6 +18,8 @@ function SettingIcon({icon, text, nextIcon}) {
             navigation.navigate("EditProfile")
         } else if(text === "Change Password") {
             navigation.navigate("ChangePassword")
+        } else if(text === "Language") {
+            navigation.navigate("Language")
         }
       };
 

@@ -15,6 +15,7 @@ import SettingCon from './screens/Control/SettingCon';
 import EditProfile from './screens/Control/SettingScreens/EditProfile';
 import HeaderIcon from './components/UI/HeaderIcon';
 import ChangePassword from './screens/Control/SettingScreens/ChangePassword';
+import Language from './screens/Control/SettingScreens/Language';
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -91,6 +92,7 @@ function SettingStack() {
     <Stack.Screen name="BottomNav" component={SettingCon} options={{ headerShown: false }} />
     <Stack.Screen name="EditProfile" component={EditProfile} options={{ title: "Edit Profile" }} />
     <Stack.Screen name="ChangePassword" component={ChangePassword} options={{ title: "Change Password" }} />
+    <Stack.Screen name="Language" component={Language} options={{ title: "Language" }} />
   </Stack.Navigator>
   )
 }
