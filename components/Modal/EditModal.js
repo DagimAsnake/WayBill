@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, Modal, Text, TouchableWithoutFeedback, StatusBar } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
-function EditModal({ modalVisible, closeModal }) {
+function EditModal({ modalVisible, closeModal, label }) {
   function handleOverlayPress() {
     closeModal();
   }
@@ -16,7 +16,7 @@ function EditModal({ modalVisible, closeModal }) {
             <View style={styles.icon}>
                 <Ionicons name="checkmark-circle-outline" size={40} color="green" />
             </View>
-            <Text style={styles.modalText}>Profile Saved</Text>
+            <Text style={styles.modalText}>{label}</Text>
           </View>
         </View>
       </TouchableWithoutFeedback>

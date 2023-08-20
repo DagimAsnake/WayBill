@@ -16,6 +16,8 @@ function SettingIcon({icon, text, nextIcon}) {
             setIsAuthToggled(!isAuthToggled)
         } else if(text === "Edit Profile") {
             navigation.navigate("EditProfile")
+        } else if(text === "Change Password") {
+            navigation.navigate("ChangePassword")
         }
       };
 

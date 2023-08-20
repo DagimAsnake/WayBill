@@ -14,6 +14,7 @@ import HistoryCon from './screens/Control/HistoryCon';
 import SettingCon from './screens/Control/SettingCon';
 import EditProfile from './screens/Control/SettingScreens/EditProfile';
 import HeaderIcon from './components/UI/HeaderIcon';
+import ChangePassword from './screens/Control/SettingScreens/ChangePassword';
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -89,6 +90,7 @@ function SettingStack() {
     <Stack.Navigator>
     <Stack.Screen name="BottomNav" component={SettingCon} options={{ headerShown: false }} />
     <Stack.Screen name="EditProfile" component={EditProfile} options={{ title: "Edit Profile" }} />
+    <Stack.Screen name="ChangePassword" component={ChangePassword} options={{ title: "Change Password" }} />
   </Stack.Navigator>
   )
 }

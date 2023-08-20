@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, ScrollView, Image, StyleSheet, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, ScrollView, Image, StyleSheet, TouchableWithoutFeedback, Keyboard } from "react-native";
 import Input from "../../../components/Auth/Input";
 import PhoneNumber from "../../../components/Auth/PhoneNumber";
 import Button from "../../../components/UI/Button";
@@ -56,7 +56,7 @@ function EditProfile() {
             </Button>
           </View>
         </ScrollView>
-        <EditModal modalVisible={modalVisible} closeModal={closeModal} />
+        <EditModal label={"Profile Saved"} modalVisible={modalVisible} closeModal={closeModal} />
       </View>
     </TouchableWithoutFeedback>
   );
