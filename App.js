@@ -12,84 +12,89 @@ import HomeCon from './screens/Control/HomeCon';
 import RewardCon from './screens/Control/RewardCon';
 import HistoryCon from './screens/Control/HistoryCon';
 import SettingCon from './screens/Control/SettingCon';
+import EditProfile from './screens/Control/SettingScreens/EditProfile';
 import HeaderIcon from './components/UI/HeaderIcon';
 
 const BottomTab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 function AuthStack() {
-  return(
+  return (
     <>
-    <StatusBar style='light' />
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="SignUp" component={SignUp} />
-      <Stack.Screen name="SignIn" component={SignIn} />
-    </Stack.Navigator>
+      <StatusBar style='light' />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="SignIn" component={SignIn} />
+      </Stack.Navigator>
     </>
   )
 }
 
 function BottomNav() {
-  return(
+  return (
     <>
-    <StatusBar style='dark' />
-    <BottomTab.Navigator 
-       screenOptions={({navigation}) => ({
-        tabBarActiveTintColor: "red",
-        headerRight: ({tintColor}) => (
-          <>
+      <StatusBar style='dark' />
+      <BottomTab.Navigator
+        screenOptions={({ navigation }) => ({
+          tabBarActiveTintColor: "red",
+          headerRight: ({ tintColor }) => (
+            <>
               <HeaderIcon />
-          </>
+            </>
           )
-      })}
-    >
-      <BottomTab.Screen name='Controller' component={HomeCon}  
-        options={{
-              tabBarLabel: 'Home',
-              tabBarIcon: ({color, size}) => (
-                <Ionicons name="home-outline" size={size} color={color} />
-              )
-            }}
-      />
-      <BottomTab.Screen name='Reward' component={RewardCon}
-         options={{
-            tabBarIcon: ({color, size}) => (
+        })}
+      >
+        <BottomTab.Screen name='Controller' component={HomeCon}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="home-outline" size={size} color={color} />
+            )
+          }}
+        />
+        <BottomTab.Screen name='Reward' component={RewardCon}
+          options={{
+            tabBarIcon: ({ color, size }) => (
               <Ionicons name="ribbon-outline" size={size} color={color} />
             )
           }}
-      />
-      <BottomTab.Screen name='History' component={HistoryCon} 
-         options={{
-            tabBarIcon: ({color, size}) => (
+        />
+        <BottomTab.Screen name='History' component={HistoryCon}
+          options={{
+            tabBarIcon: ({ color, size }) => (
               <Entypo name="back-in-time" size={size} color={color} />
             )
           }}
-      />
-      <BottomTab.Screen name='Setting' component={SettingCon} 
-         options={{
+        />
+        <BottomTab.Screen name='Setting' component={SettingStack}
+          options={{
             headerShown: false,
-            tabBarIcon: ({color, size}) => (
+            tabBarIcon: ({ color, size }) => (
               <Ionicons name="settings-outline" size={size} color={color} />
             )
           }}
-      />
-    </BottomTab.Navigator>
+        />
+      </BottomTab.Navigator>
     </>
   )
 }
 
+function SettingStack() {
+  return(
+    <Stack.Navigator>
+    <Stack.Screen name="BottomNav" component={SettingCon} options={{ headerShown: false }} />
+    <Stack.Screen name="EditProfile" component={EditProfile} />
+  </Stack.Navigator>
+  )
+}
 
 export default function App() {
   return (
     <NavigationContainer>
       {/* <AuthStack />   */}
       {/* After Authentication */}
-      <Stack.Navigator>
-          <Stack.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
-      </Stack.Navigator>
-  </NavigationContainer>
+     <BottomNav />
+    </NavigationContainer>
   );
 }
-
-

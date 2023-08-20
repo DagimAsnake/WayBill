@@ -14,6 +14,8 @@ function SettingIcon({icon, text, nextIcon}) {
             setIsGpsToggled(!isGpsToggled);
         } else if(text === "Two-Step Authentication") {
             setIsAuthToggled(!isAuthToggled)
+        } else if(text === "Edit Profile") {
+            navigation.navigate("EditProfile")
         }
       };
 
