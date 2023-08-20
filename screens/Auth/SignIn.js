@@ -44,6 +44,7 @@ function SignIn({ navigation }) {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.view}>
           <PhoneNumber
+            label="Phone"
             phone={phone}
             onUpdateValue={updateInputValueHandler.bind(this, "phone")}
           />

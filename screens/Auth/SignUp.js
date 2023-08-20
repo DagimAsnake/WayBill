@@ -2,7 +2,6 @@ import { View, StyleSheet, ScrollView, Text } from "react-native"
 import {LinearGradient } from "expo-linear-gradient"
 import { useState } from "react"
 
-
 import IconAuth from "../../components/UI/IconAuth"
 import Input from "../../components/Auth/Input"
 import SelectInput from "../../components/Auth/SelectInput"
@@ -59,7 +58,7 @@ function SignUp({navigation}) {
                             keyboardType="default"
                             placeholder="Full Name"
                         />
-                        <PhoneNumber phone={phone} onUpdateValue={updateInputValueHandler.bind(this, "phone")} />
+                        <PhoneNumber label="Phone" phone={phone} onUpdateValue={updateInputValueHandler.bind(this, "phone")} />
                         <PasswordInput 
                             label="Password"
                             onUpdateValue={updateInputValueHandler.bind(this, "password")}

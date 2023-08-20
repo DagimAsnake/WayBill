@@ -1,18 +1,18 @@
 import PhoneInput from "react-native-phone-number-input";
 import { StyleSheet, View, Text } from "react-native";
 
-function PhoneNumber({ phone, onUpdateValue }) {
+function PhoneNumber({ phone, onUpdateValue, label }) {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.label}>Phone</Text>
+        <Text style={styles.label}>{label}</Text>
         <View style={styles.containerPhone}>
           <PhoneInput
             defaultValue={phone}
             defaultCode="ET"
             layout="first"
             onChangeFormattedText={onUpdateValue}
-            containerStyle={styles.phoneInputContainer}
+            // containerStyle={styles.phoneInputContainer}
             textContainerStyle={styles.text}
             withShadow
           />
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
     width: 350,
     overflow: "hidden",
   },
-  phoneInputContainer: {
-    flex: 1,
-  },
+  // phoneInputContainer: {
+  //   flex: 1,
+  // },
   text: {
     backgroundColor: "#E3E3E3",
     

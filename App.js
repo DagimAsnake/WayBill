@@ -37,12 +37,16 @@ function BottomNav() {
       <StatusBar style='dark' />
       <BottomTab.Navigator
         screenOptions={({ navigation }) => ({
+          tabBarStyle: {
+            paddingBottom: 10,
+          },
           tabBarActiveTintColor: "red",
           headerRight: ({ tintColor }) => (
             <>
               <HeaderIcon />
             </>
-          )
+          ),
+          tabBarHideOnKeyboard: true,
         })}
       >
         <BottomTab.Screen name='Controller' component={HomeCon}
@@ -84,7 +88,7 @@ function SettingStack() {
   return(
     <Stack.Navigator>
     <Stack.Screen name="BottomNav" component={SettingCon} options={{ headerShown: false }} />
-    <Stack.Screen name="EditProfile" component={EditProfile} />
+    <Stack.Screen name="EditProfile" component={EditProfile} options={{ title: "Edit Profile" }} />
   </Stack.Navigator>
   )
 }
