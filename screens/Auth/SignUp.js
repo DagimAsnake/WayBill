@@ -50,7 +50,7 @@ function SignUp({navigation}) {
                 </LinearGradient>
                 <ScrollView contentContainerStyle={styles.scrollViewContent}>
                     <View style={styles.view}>
-                        <SelectInput options={options} handleOptionChange={updateInputValueHandler.bind(this, "select")} />
+                        <SelectInput width={350} label={"Type of Account"} options={options} handleOptionChange={updateInputValueHandler.bind(this, "select")} />
                         <Input 
                             label="Name"
                             onUpdateValue={updateInputValueHandler.bind(this, "name")}

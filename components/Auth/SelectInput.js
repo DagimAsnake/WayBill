@@ -1,12 +1,20 @@
 import { View, Text, StyleSheet } from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
-import {Ionicons} from "@expo/vector-icons"
+import { Ionicons } from "@expo/vector-icons";
 
-function SelectInput({options, handleOptionChange}) {
+function SelectInput({ options, handleOptionChange, label, width }) {
+  const buttonStyle = {
+    borderWidth: 1,
+    borderColor: "#6559d4",
+    borderRadius: 4,
+    paddingVertical: 12,
+    paddingHorizontal: 6,
+    width: width ? width : 350, // Use the width prop if provided, otherwise use a default width of 350
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Type of Account</Text>
+      {label && <Text style={styles.label}>{label}</Text>}
       <SelectDropdown
         data={options}
         onSelect={handleOptionChange}
@@ -19,7 +27,7 @@ function SelectInput({options, handleOptionChange}) {
           // Customize the option text if needed
           return item;
         }}
-        buttonStyle={styles.buttonStyle}
+        buttonStyle={buttonStyle}
         buttonTextStyle={styles.buttonTextStyle}
         renderDropdownIcon={() => {
           // Optionally customize the dropdown icon
@@ -41,14 +49,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#909090",
     marginBottom: 8,
-  },
-  buttonStyle: {
-    borderWidth: 1,
-    borderColor: "#6559d4",
-    borderRadius: 4,
-    paddingVertical: 12,
-    paddingHorizontal: 6,
-    width: 350
   },
   buttonTextStyle: {
     fontSize: 16,

@@ -89,13 +89,14 @@ function BottomNav() {
 function SettingStack() {
   return(
     <Stack.Navigator>
-    <Stack.Screen name="BottomNav" component={SettingCon} options={{ headerShown: false }} />
+    <Stack.Screen name="SettingNav" component={SettingCon} options={{ headerShown: false }} />
     <Stack.Screen name="EditProfile" component={EditProfile} options={{ title: "Edit Profile" }} />
     <Stack.Screen name="ChangePassword" component={ChangePassword} options={{ title: "Change Password" }} />
     <Stack.Screen name="Language" component={Language} options={{ title: "Language" }} />
   </Stack.Navigator>
   )
 }
+
 
 export default function App() {
   return (
